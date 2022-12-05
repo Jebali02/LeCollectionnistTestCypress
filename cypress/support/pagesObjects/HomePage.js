@@ -6,5 +6,6 @@ static typeDestination(destination){
 static clickOnSearchBTN(){
     cy.get('.base-search__btn').click()
 }
+
 }
 export default HomePage;
