@@ -1,13 +1,21 @@
 class OurLuxuryVillaAndChaletsPage {
 
     static clickOnDatesField(){
-        cy.get('.datepicker__input--first').click();
+        cy.get('.datepicker__input--first').click()
+        cy.get('.datepicker__month-button--next').click()
     }
     static setArrivalDate(arrivalDate){
-        cy.get('[data-testid=day-2022-12-07]', { force: true }).click()
+       // if (cy.xpath('//p[@class=\'datepicker__month-name\']').should('have.text','Août  2023')){
+        // cy.get('[data-testid=day-2023-08-06]', { force: true }).click() 
+         //cy.get('[data-testid=day-2023-08-20]', { force: true }).click()     
+      
+       // else {
+         //cy.get('.datepicker__month-button--next').click()
+   // }
+
     }
     static setDepartureDate(departure){
-        cy.get('[data-testid=day-2022-12-15]', { force: true }).click()
+        //cy.get('[data-testid=day-2022-12-15]', { force: true }).click()
     }
     static clickOnDepartBTN(){
         cy.get('.datepicker__dummy-wrapper > [tabindex="-1"]').click()
@@ -30,7 +38,7 @@ class OurLuxuryVillaAndChaletsPage {
         cy.get('.grid > .lc-btn--secondary').click()
     }
     static clickOnRecommendedBTN(){
-        cy.get('.col-span-2 > .base-multiselect > .w-full > .multiselect > .multiselect__tags').click()
+        cy.xpath('//span[@class=\'font-medium truncate\']').click()
     }
     static chooseFilterType(filtrageType){
         cy.get('.col-span-2 > .base-multiselect > .w-full > .multiselect > .multiselect__tags').click()
