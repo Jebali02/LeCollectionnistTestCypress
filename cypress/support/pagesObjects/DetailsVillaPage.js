@@ -1,21 +1,24 @@
+import HomePage from "./HomePage";
+import { DetailsVillaPageConsts } from "./utils/Constants";
+import { getPath } from "./utils/functions";
 class DetailsVillaPage {
     static clickOnInformationRequestBTN(){
-        cy.xpath('//div[@class=\'relative lc_tooltip lc_tooltip--hover\']//button[contains(text(),\'Demande de renseignements\')]').click()
-    }
-    static FillLastName(LastName){
-        cy.get('[data-testid=inquiry-form__input-lastname]').type(LastName)
+        getPath(DetailsVillaPageConsts.INFORMATION_REQUEST_BTN).click()
     }
     static FillFirstName(FirstName){
-        cy.get('[data-testid=inquiry-form__input-firstname]').type(FirstName)
+        getPath(DetailsVillaPageConsts.FIRSTNAME_BOX).type(FirstName)
+    }
+    static FillLastName(LastName){
+        getPath(DetailsVillaPageConsts.LASTNAME_BOX).type(LastName)
     }
     static FillEmail(Email){
-        cy.get('[data-testid=inquiry-form__input-email]').type(Email)
+        getPath(DetailsVillaPageConsts.EMAIL_BOX).type(Email)
     }
     static FillPhone(Phone){
-        cy.get('#phone_undefined').type(Phone)
+        getPath(DetailsVillaPageConsts.PHONE_BOX).type(Phone)
     }
     static clickOnSendRequestBTN(){
-        cy.xpath('//button[@data-testid=\'inquiry-form-step__send-request-unlogged\']').click()
+        getPath(DetailsVillaPageConsts.SEND_REQUEST_BTN).click()
     }
     
 }

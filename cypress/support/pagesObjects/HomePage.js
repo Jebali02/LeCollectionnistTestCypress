@@ -1,10 +1,12 @@
+import { HomePageConsts } from "./utils/Constants";
+import { getPath } from "./utils/functions";
 class HomePage{
 
 static typeDestination(destination){
-    cy.get('.multiselect__single > .flex-none').type(destination)
+    getPath(HomePageConsts.SEARCH_DESTINATION_BOX).type(destination)
 }
 static clickOnSearchBTN(){
-    cy.get('.base-search__btn').click()
+    getPath(HomePageConsts.BTN_SEARCH).click()
 }
 
 }

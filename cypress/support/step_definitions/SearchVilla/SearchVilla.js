@@ -9,13 +9,12 @@ When('je cherche la destination {string}', (destination)=>{
     HomePage.typeDestination(destination)
     HomePage.clickOnSearchBTN()
 } )
-Then('je dois vérifier que une page qui affiche la liste des villas s\'ouvre', ()=>{
-
+Then('je dois vérifier que je suis rederigé vers la page intitulée {string}', (title)=>{
+    OurLuxuryVillaAndChaletsPage.GetPageTitle(title)
 } )
-When('je définie la date d\'{string} et de {string}', ()=>{
+When('je fait une recherche pour le mois d\'{string}, avec une date de départ du {string} au {string}', (month,arrivalDate,departureDate)=>{
     OurLuxuryVillaAndChaletsPage.clickOnDatesField()
-    OurLuxuryVillaAndChaletsPage.setArrivalDate()
-    OurLuxuryVillaAndChaletsPage.setDepartureDate()
+    OurLuxuryVillaAndChaletsPage.SetDate(month,arrivalDate,departureDate)
 } )
 And('je définie le budget maximal de {string}', (budget)=>{
     OurLuxuryVillaAndChaletsPage.FillMaximumBudget(budget)
@@ -25,6 +24,7 @@ And('j\'applique le filtrage {string}', (filtrageType)=>{
     OurLuxuryVillaAndChaletsPage.chooseFilterType(filtrageType)
 } )
 Then('je dois vérifier que le nombre de résultat s\'affiche', ()=>{
+    OurLuxuryVillaAndChaletsPage.isVillaDisplayed()
 } )
 And('je sélectionne la première maison qui s\'affiche', ()=>{
    OurLuxuryVillaAndChaletsPage.clickOnFirstVilla()
@@ -32,11 +32,11 @@ And('je sélectionne la première maison qui s\'affiche', ()=>{
 And('je clique sur demande de renseignements', ()=>{
     DetailsVillaPage.clickOnInformationRequestBTN()
 } )
-And('je renseigne l\'ensemble des informations le {string} le {string} l\'{string} et le {string}', ()=>{
-    DetailsVillaPage.FillLastName("Test")
-    DetailsVillaPage.FillFirstName("QA")
-    DetailsVillaPage.FillEmail("qa@test")
-    DetailsVillaPage.FillPhone("0600000000")
+And('je renseigne l\'ensemble des informations le {string} le {string} l\'{string} et le {string}', (nom,prenom,email,numero)=>{
+    DetailsVillaPage.FillFirstName(prenom)
+    DetailsVillaPage.FillLastName(nom)
+    DetailsVillaPage.FillEmail(email)
+    DetailsVillaPage.FillPhone(numero)
 } )
 And('je clique sur envoyer ma demande', ()=>{
     //DetailsVillaPage.clickOnSendRequestBTN()
