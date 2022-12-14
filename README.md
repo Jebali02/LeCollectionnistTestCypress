@@ -30,6 +30,8 @@ Open VS Code terminal and run this commands  :
     -npm install --save-dev cypress@8.7.0 : Cypress version used : 8.7.0
     -npm install --save-dev cypress-cucumber-preprocessor : to use cucumber with gherkin synthax 
     -npm install -D cypress-xpath : to use cy.xpath
+    -npm i -D cypress-recurse
+    -
 
 
 #Step7
