@@ -16,8 +16,8 @@ Link to install node.js : https://nodejs.org/en/download/
 
 How to verify if node and npm are 
 
- -npm --version
- -node --version 
+    - npm --version
+    - node --version 
 
 # Step2
 
@@ -28,7 +28,7 @@ Link to install isual Studio Code : https://code.visualstudio.com/download
 
 Clone repository form in your local workspace 
 
-- git clone https://github.com/Jebali02/LeCollectionnistTestCypress.git
+    - git clone https://github.com/Jebali02/LeCollectionnistTestCypress.git
 
 # Step4
 
@@ -37,11 +37,16 @@ Open the folder in VS Code. And open your terminal under the worksapce
 # Step5 : This step is mondatory to be able to run tests
 
 Open VS Code terminal and run this commands  : 
-    1-npm install --save-dev cypress@8.7.0 : Cypress version used : 8.7.0
-    2-npm install --save-dev cypress-cucumber-preprocessor : to use cucumber with gherkin synthax 
-    3-npm install -D cypress-xpath : to use cy.xpath
-    4-npm i -D cypress-recurse
-    5-npm install multiple-cucumber-html-reporter --save-dev : for report cucumber html
+
+    - npm install --save-dev cypress@8.7.0 : Cypress version used : 8.7.0
+
+    - npm install --save-dev cypress-cucumber-preprocessor 
+
+    - npm install -D cypress-xpath
+
+    - npm i -D cypress-recurse
+
+    - npm install multiple-cucumber-html-reporter --save-dev 
 
 # Step6 : How to run tests ?
 
@@ -53,7 +58,9 @@ This command will run all features available under the folder /integration/Featu
 
 # Step7 : How generate report : Cucumber Report 
 
-Under the workspace run this command  : node .\cucumber-html-report.js
+Under the workspace run this command  : 
+
+    - node .\cucumber-html-report.js
 
 Cumcumber Report exemple :
 
